@@ -8,7 +8,7 @@ data:
     url: http://localhost:8600/
 file:
   upload:
-    path: D:/mogu_blog/data/
+    path: F:/boke/data/
 
 #启动Basic验证    
 security:
@@ -34,7 +34,7 @@ spring:
   # DATABASE CONFIG
   datasource:
     username: root
-    password: root
+    password: 123456
     url: jdbc:mysql://localhost:3306/mogu_picture?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false    
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
