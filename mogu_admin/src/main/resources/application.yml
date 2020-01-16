@@ -12,10 +12,10 @@ PROJECT_NAME: 蘑菇博客
 #Data image url
 data:
   image:
-    url: http://localhost:8600/
+    url: http://192.168.1.177:8600/
 file:
   upload:
-    path: D:/mogu_blog/data/
+    path: /home/data/
 
 moguBlog:
    email: mogublog@163.com
@@ -47,7 +47,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://localhost:3306/mogu_blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false    
+    url: jdbc:mysql://blog-mysql:3306/mogu_blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     
@@ -84,17 +84,17 @@ spring:
   #Solr
   data:
     solr:
-      host: http://localhost:8080/solr
+      host: http://solr:8080/solr
       core: collection1
       repositories:
         enabled: true
   #redis
   redis:
-    host: 127.0.0.1 #redis的主机ip
+    host: blog-redis #redis的主机ip
     port: 6379
         
   rabbitmq:
-    host: 127.0.0.1 #rabbitmq的主机ip
+    host: rabbitmq #rabbitmq的主机ip
     port: 5672
     username: guest
     password: guest
@@ -105,7 +105,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://user:password123@localhost:8761/eureka
+      defaultZone: http://user:password123@eureka-server:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}

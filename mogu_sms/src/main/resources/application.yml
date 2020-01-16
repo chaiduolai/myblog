@@ -19,12 +19,12 @@ spring:
 
   #redis
   redis:
-    host: 127.0.0.1 #redis的主机ip
+    host: blog-redis #redis的主机ip
     port: 6379
     
   #RabbitMq
   rabbitmq:
-    host: 127.0.0.1 #rabbitmq的主机ip
+    host: rabbitmq #rabbitmq的主机ip
     port: 5672
     username: guest
     password: guest
@@ -50,7 +50,7 @@ eureka:
     healthcheck: 
       enabled: true
     serviceUrl:
-      defaultZone: http://user:password123@localhost:8761/eureka
+      defaultZone: http://user:password123@eureka-server:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
