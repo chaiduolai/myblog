@@ -11,5 +11,4 @@ module.exports = {
   WEB_API: '"http://47.101.195.138:8603"',
   // PICTURE_HOST: '"http://101.132.194.128:8600"',
   PICTURE_HOST: '"http://picture.cduolai.com"',
-
 }
