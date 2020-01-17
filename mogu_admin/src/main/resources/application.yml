@@ -15,7 +15,7 @@ data:
     url: http://localhost:8600/
 file:
   upload:
-    path: D:/mogu_blog/data/
+    path: F:/boke/data/
 
 moguBlog:
    email: mogublog@163.com

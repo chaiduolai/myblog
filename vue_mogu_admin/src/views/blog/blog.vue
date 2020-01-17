@@ -191,7 +191,7 @@
         <!-- <el-form-item v-if="isEditForm == true" label="博客UID" :label-width="formLabelWidth">
 		      <el-input v-model="form.uid" auto-complete="off" disabled></el-input>
 		    </el-form-item>
-		    
+
 		   	<el-form-item v-if="isEditForm == false" label="博客UID" :label-width="formLabelWidth" style="display: none;">
 		      <el-input v-model="form.uid" auto-complete="off"></el-input>
         </el-form-item>-->
@@ -411,11 +411,11 @@ export default {
     //从dashboard传递过来的 tagUid 以及 blogSortUid
     var tempTag = this.$route.query.tag;
     var tempBlogSort = this.$route.query.blogSort;
-    if(tempTag != undefined) { 
+    if(tempTag != undefined) {
       this.tagRemoteMethod(tempTag.name);
       this.tagKeyword = tempTag.tagUid;
     }
-    if(tempBlogSort != undefined) {    
+    if(tempBlogSort != undefined) {
       this.sortRemoteMethod(tempBlogSort.name);
       this.sortKeyword = tempBlogSort.blogSortUid;
     }
@@ -473,7 +473,7 @@ export default {
       return formObject;
     },
     // 跳转到该博客详情
-    onClick: function(row) {      
+    onClick: function(row) {
       window.open( this.BLOG_WEB_URL + "/#/info?blogUid=" + row.uid);
     },
     //标签远程搜索函数
@@ -548,7 +548,7 @@ export default {
     },
     handleAdd: function() {
       var that = this;
-      var tempForm = JSON.parse(getCookie("form"));      
+      var tempForm = JSON.parse(getCookie("form"));
       if (tempForm != null && tempForm.title != null && tempForm.title != "") {
         this.$confirm("还有上次未完成的博客编辑，是否继续编辑?", "提示", {
           confirmButtonText: "确定",
@@ -650,7 +650,7 @@ export default {
         type: "warning"
       })
         .then(() => {
-  
+
           var params = {};
           params.uid = row.uid;
           deleteBlog(params).then(response => {
@@ -707,7 +707,7 @@ export default {
             });
           }
         });
-        
+
       } else {
 
         addBlog(this.form).then(response => {
